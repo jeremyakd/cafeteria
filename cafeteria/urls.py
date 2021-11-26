@@ -11,6 +11,8 @@ urlpatterns = [
     path('', include('core.urls') ),
     # PATH services
     path('services/',include('services.urls') ),
+    # PATH pages
+    path('page/', include('pages.urls') ),
 ]
 
 if settings.DEBUG:

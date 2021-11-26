@@ -66,6 +66,7 @@
     {% block content %}{% endblock content %}
 
     <!-- Pié de página -->
+
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0">
@@ -103,9 +104,15 @@
           {% endif %}
         </p>
         <p class="m-0 mbt">
-          <a href="sample.html" class="link">Política de privacidad</a> ·
-          <a href="sample.html" class="link">Aviso legal</a> ·
-          <a href="sample.html" class="link">Cookies</a>
+            {% comment %} cargo {% endcomment %}
+            {% load pages_tags %}
+            {% comment %} seteo alias {% endcomment %}
+            {% get_page_list as page_list %}
+
+            {% comment %} recorro {% endcomment %}
+            {% for page in page_list%}
+              <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{ page.title }}</a>
+            {% endfor %}
         </p>
         <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
       </div>
