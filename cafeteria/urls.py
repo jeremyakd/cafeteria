@@ -9,6 +9,8 @@ urlpatterns = [
     path('blog/', include('blog.urls') ),
     # PATH core
     path('', include('core.urls') ),
+    # PATH contact
+    path('contact/', include('contact.urls') ),
     # PATH services
     path('services/',include('services.urls') ),
     # PATH pages
